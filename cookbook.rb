@@ -9,7 +9,7 @@ class Cookbook
   end
 
   def all
-    return @recipes
+    @recipes
   end
 
   def find(index)
@@ -23,7 +23,7 @@ class Cookbook
 
   def remove_recipe(recipe_index)
     @recipes.delete_at(recipe_index)
-    return @recipes
+    @recipes
   end
 
   def load_data

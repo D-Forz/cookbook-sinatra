@@ -1,11 +1,28 @@
-<h1>Welcome to your Cookbook 📗</h1>
 
-<p>You currently have in your cookbook:</p>
+<div class="card m-3">
+  <div class="card-header">
+    <h1 class="text-center">Welcome to your Cookbook 📗</h1>
+  </div>
 
-<ul>
-  <% @recipes.each_with_index do |recipe, index| %>
-    <li><%= recipe.name %>: <%= recipe.description %> | <%=recipe.prep_time%> | - <a href="/recipes/<%= index %>">Destroy</a></li>
-  <% end %>
-</ul>
+  <div class="card m-4">
+    <div class="card-header m-3">
+      <h2>Recipes</h2>
+    </div>
+    <%# <ul> %>
+      <% @recipes.each_with_index do |recipe, index| %>
+        <%# <li> %>
+          <div class="card-body">
+            <h3 class="card-title text-center"> <%= recipe.name %> </h3>
+            <p class="card-text text-center"> <%= recipe.description %> </p>
+            <p class="card-text text-center"> <%= recipe.prep_time %> </p>
+            <p class="card-text text-center"> <i class="fa-solid fa-star"></i> <%= recipe.rating %> </p>
+            <a href="/recipes/<%= index %>" class="btn btn-outline-danger">Destroy</a>
+          </div>
+        <%# </li> %>
+      <% end %>
+      </div>
+    <%# </ul> %>
 
-<a href="/new">Add a recipe</a>
+    <a href="/new" class="btn btn-outline-primary">Add a recipe</a>
+  </div>
+</div>
