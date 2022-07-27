@@ -4,25 +4,22 @@
     <h1 class="text-center">Welcome to your Cookbook 📗</h1>
   </div>
 
-  <div class="card m-4">
+  <div class="card text-center">
     <div class="card-header m-3">
       <h2>Recipes</h2>
     </div>
-    <%# <ul> %>
       <% @recipes.each_with_index do |recipe, index| %>
-        <%# <li> %>
           <div class="card-body">
-            <h3 class="card-title text-center"> <%= recipe.name %> </h3>
-            <p class="card-text text-center"> <%= recipe.description %> </p>
-            <p class="card-text text-center"> <%= recipe.prep_time %> </p>
-            <p class="card-text text-center"> <i class="fa-solid fa-star"></i> <%= recipe.rating %> </p>
-            <a href="/recipes/<%= index %>" class="btn btn-outline-danger">Destroy</a>
+            <h3 class="card-title"> <%= recipe.name %></h3>
+            <p class=" card-subtitle mb-2 text-muted"><i class="fa-solid fa-star"></i> <%= recipe.rating %> | <%= recipe.prep_time %> </p>
+            <p> <%= recipe.description %> </p>
+            <div class="card-footer text-muted">
+              <a href="/recipes/<%= index %>">Delete Recipe</a>
+            </div>
           </div>
-        <%# </li> %>
       <% end %>
       </div>
-    <%# </ul> %>
 
-    <a href="/new" class="btn btn-outline-primary">Add a recipe</a>
+    <a href="/new" class="btn btn-outline-success">Add a recipe</a>
   </div>
 </div>

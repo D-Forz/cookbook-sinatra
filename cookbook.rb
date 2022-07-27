@@ -23,7 +23,7 @@ class Cookbook
 
   def remove_recipe(recipe_index)
     @recipes.delete_at(recipe_index)
-    @recipes
+    save_data
   end
 
   def load_data
